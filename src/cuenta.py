@@ -5,30 +5,17 @@ class Cuenta:
         self.saldo = 0
 
     def getSaldo(self):
-        """Función que retorna saldo 
-        >>> self.getSaldo()
-        0
-        """
+        """Función que retorna saldo """
         return self.saldo
 
     def ingreso(self, cantidad):
-        """Función que guarda en la variable saldo la cantidad del ingreso
-        >>> self.ingreso(12)
-        12
-        """
+        """Función que guarda en la variable saldo la cantidad del ingreso"""
         esValida = self.validarCantidadIngresada(cantidad)
         if esValida:
             self.saldo += cantidad
 
     def validarCantidadIngresada(self, cantidad):
-        """Función que valida la cantidad ingresada.
-        >>> validarCantidadIngresada(-23)
-        False
-        >>> validarCantidadIngresada(23)
-        True
-        >>> validarCantidadIngresada(7000)
-        False
-        """
+        """Función que valida la cantidad ingresada"""
         if round(cantidad, 2) != cantidad:
             return False
 
@@ -79,7 +66,3 @@ class Cuenta:
             return False
 
         return True
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
